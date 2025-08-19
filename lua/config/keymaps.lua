@@ -9,6 +9,8 @@ local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
 vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
 vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
 
+-- LSP related
+vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, { desc="Open Diagnostics in Float" })
 -- vim way: ; goes to the direction you were moving.
 -- vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move)
 -- vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_opposite)

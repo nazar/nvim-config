@@ -36,4 +36,14 @@ require("lazy").setup({
   checker = { enabled = false },
 })
 
+vim.lsp.config("lua_ls", {
+  settings = {
+   Lua = {
+     diagnostics = {
+       globals = { "vim" }
+     }
+   }
+ }
+})
+
 require('config.keymaps')
