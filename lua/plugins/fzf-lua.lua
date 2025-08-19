@@ -14,6 +14,7 @@ return {
     { "<leader>fd", function() require('fzf-lua').diagnostics_document() end, desc="[F]ind [D]iagnostics" },
     { "<leader>fr", function() require('fzf-lua').resume() end, desc="[F]ind [R]esume" },
     { "<leader>fo", function() require('fzf-lua').oldfiles() end, desc="[F]ind [O]ld files" },
+    { "<leader>fs", function() require('fzf-lua').git_status() end, desc="Git [S]status" },
     { "<leader><leader>", function() require('fzf-lua').buffers() end, desc="[ ] Find existing buffers" },
     { "<leader>/", function() require('fzf-lua').lgrep_curbuf() end, desc="[/] Live grep the current buffer" },
   }
