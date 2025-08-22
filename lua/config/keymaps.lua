@@ -9,6 +9,14 @@ local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
 vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
 vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
 
+-- Move Lines
+vim.keymap.set("n", "<S-D-Down>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
+vim.keymap.set("n", "<S-D-Up>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
+vim.keymap.set("i", "<S-D-Down>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+vim.keymap.set("i", "<S-D-Up>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+vim.keymap.set("v", "<S-D-Down>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
+vim.keymap.set("v", "<S-D-Up>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
+
 -- LSP related
 vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, { desc="Open Diagnostics in Float" })
 -- vim way: ; goes to the direction you were moving.
