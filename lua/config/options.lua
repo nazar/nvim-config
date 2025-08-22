@@ -41,7 +41,9 @@ vim.o.showmode = false
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
+  -- disable sending to clipboard for now and use internal clipboard
+  --vim.o.clipboard = 'unnamedplus'
+  vim.o.clipboard = ''
 end)
 
 -- Enable break indent
