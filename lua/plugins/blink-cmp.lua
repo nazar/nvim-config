@@ -34,7 +34,12 @@ return {
     },
 
     -- (Default) Only show the documentation popup when manually triggered
-    completion = { documentation = { auto_show = true } },
+    completion = {
+      documentation = {
+        auto_show = true
+      },
+    },
+
     signature = { enabled = true },
 
     -- Default list of enabled providers defined so that you can extend it
@@ -48,7 +53,23 @@ return {
     -- when the Rust fuzzy matcher is not available, by using `implementation = "prefer_rust"`
     --
     -- See the fuzzy documentation for more information
-    fuzzy = { implementation = "prefer_rust_with_warning" }
+    fuzzy = { implementation = "prefer_rust_with_warning" },
+
+    -- auto completion
+    cmdline = {
+      keymap = { preset = 'inherit' },
+      completion = {
+        menu = {
+          auto_show = true,
+        },
+        -- prevents the first item to be automatically selected in command line - see https://cmp.saghen.dev/configuration/reference#cmdline
+        list = {
+          selection = {
+            preselect = false
+          }
+        },
+      },
+    },
   },
   opts_extend = { "sources.default" }
 }
