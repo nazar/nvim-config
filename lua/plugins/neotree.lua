@@ -11,9 +11,9 @@ return {
       require('neo-tree').setup({
         sort_case_insensitive = true,
       })
-    vim.keymap.set("n", "<leader>ee", "<cmd>Neotree toggle<CR>", { desc = "File [E]xplorer Toggle" })
-    vim.keymap.set("n", "<leader>ef", "<cmd>Neotree focus<CR>", { desc = "File Explorer Open and [F]ocus" })
-    vim.keymap.set("n", "<leader>el", "<cmd>Neotree reveal<CR>", { desc = "File Explorer Focus Fi[L]e]" })
+      vim.keymap.set("n", "<leader>ee", "<cmd>Neotree toggle<CR>", { desc = "File [E]xplorer Toggle" })
+      vim.keymap.set("n", "<leader>ef", "<cmd>Neotree focus<CR>", { desc = "File Explorer Open and [F]ocus" })
+      vim.keymap.set("n", "<leader>el", "<cmd>Neotree reveal<CR>", { desc = "File Explorer Focus Fi[L]e]" })
 
     end
   },
@@ -43,19 +43,19 @@ return {
             buftype = { "terminal", "quickfix" },
           },
         },
-          window = {
-    mappings = {
-      ["P"] = {
-        "toggle_preview",
-        config = {
-          use_float = false,
-          -- use_image_nvim = true,
-          -- use_snacks_image = true,
-          -- title = 'Neo-tree Preview',
-        },
-      },
-    }
-  }
+        window = {
+          mappings = {
+            ["P"] = {
+              "toggle_preview",
+              config = {
+                use_float = false,
+                -- use_image_nvim = true,
+                -- use_snacks_image = true,
+                -- title = 'Neo-tree Preview',
+              },
+            },
+          }
+        }
       })
     end,
   },
