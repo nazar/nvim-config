@@ -15,7 +15,7 @@ return {
       vim.keymap.set("n", "<leader>ef", "<cmd>Neotree focus<CR>", { desc = "File Explorer Open and [F]ocus" })
       vim.keymap.set("n", "<leader>el", "<cmd>Neotree reveal<CR>", { desc = "File Explorer Focus Fi[L]e]" })
 
-      vim.cmd("Neotree focus")
+      -- vim.cmd("Neotree focus")
     end
   },
   {

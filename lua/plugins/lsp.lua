@@ -210,7 +210,7 @@ return {
       -- css/less/scss
       cssls={},
       eslint={},
-      -- 
+      --
 
       lua_ls = {
         -- cmd = { ... },
