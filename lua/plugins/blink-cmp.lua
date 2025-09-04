@@ -38,6 +38,8 @@ return {
       documentation = {
         auto_show = true
       },
+      -- Don't select by default, auto insert on selection
+      list = { selection = { preselect = false, auto_insert = true } },
     },
 
     signature = { enabled = true },

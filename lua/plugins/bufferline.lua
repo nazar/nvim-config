@@ -4,6 +4,10 @@ return {
   dependencies = 'nvim-tree/nvim-web-devicons',
   opts = {
     options = {
+      diagnostics = 'nvim_lsp',
+      indicator = {
+        style = 'underline'
+      },
       offsets = {
         {
           filetype = 'neo-tree',
