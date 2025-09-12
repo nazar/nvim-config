@@ -211,7 +211,7 @@ return {
       -- css/less/scss
       cssls={},
       eslint={},
-      --
+      emmet_language_server={},
 
       lua_ls = {
         -- cmd = { ... },

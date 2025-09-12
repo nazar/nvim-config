@@ -10,6 +10,21 @@ return {
     config = function()
       require('neo-tree').setup({
         sort_case_insensitive = true,
+        filesystem = {
+          filtered_items = {
+            visible = false,
+            hide_dotfiles = false,
+            hide_gitignored = true,
+            -- hide_by_name = {
+            --   ".github",
+            --   ".gitignore",
+            --   "package-lock.json",
+            --   ".changeset",
+            --   ".prettierrc.json",
+            -- },
+            never_show = { ".git" },
+          }
+        },
       })
       vim.keymap.set("n", "<leader>ee", "<cmd>Neotree toggle<CR>", { desc = "File [E]xplorer Toggle" })
       vim.keymap.set("n", "<leader>ef", "<cmd>Neotree focus<CR>", { desc = "File Explorer Open and [F]ocus" })

@@ -1,7 +1,14 @@
 return {
   "ibhagwan/fzf-lua",
   dependencies = { "echasnovski/mini.icons" },
-  opts = {},
+  opts = {
+    keymap = {
+        -- adds finder window results to quicklist
+        fzf = {
+            ["ctrl-q"] = "select-all+accept",
+        },
+    },
+  },
   keys = {
     { "<leader>ff", function() require('fzf-lua').files() end, desc="[F]ind [F]iles in project directory" },
     { "<leader>fc", function() require('fzf-lua').files({ cwd=vim.fn.stdpath("config") }) end, desc="[F]ind [F]iles in neovim config folder" },

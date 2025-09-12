@@ -1,5 +1,3 @@
-vim.keymap.set("n", "-", "<CMD>Oil --float<CR>", { desc = "Open parent directory" })
-
 -- From treesitter-textobject. see: https://github.com/nvim-treesitter/nvim-treesitter-textobjects?tab=readme-ov-file#text-objects-move
 
 local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"

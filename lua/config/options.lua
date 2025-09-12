@@ -42,8 +42,8 @@ vim.o.showmode = false
 --  See `:help 'clipboard'`
 vim.schedule(function()
   -- disable sending to clipboard for now and use internal clipboard
-  --vim.o.clipboard = 'unnamedplus'
-  vim.o.clipboard = ''
+  vim.o.clipboard = 'unnamedplus'
+  -- vim.o.clipboard = ''
 end)
 
 -- Enable break indent
@@ -150,4 +150,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     vim.hl.on_yank()
   end,
+})
+
+-- strips extra white spaces on write - see https://unix.stackexchange.com/a/782489
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  command = ":%s/\\s\\+$//e",
 })
