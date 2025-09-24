@@ -42,12 +42,12 @@ return {
       list = { selection = { preselect = false, auto_insert = true } },
     },
 
-    signature = { enabled = true },
+    -- signature = { enabled = true },
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
-      default = { 'snippets', 'lsp', 'path', 'buffer' },
+      default = { 'snippets', 'buffer', 'lsp', 'path' },
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance

@@ -1,1 +1,5 @@
-return { 'echasnovski/mini.cursorword', version = '*', opts = {} }
+return {
+  'nvim-mini/mini.cursorword',
+  version = '*',
+  opts = {}
+}

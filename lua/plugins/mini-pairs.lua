@@ -1,5 +1,5 @@
 return {
-  'echasnovski/mini.pairs',
+  'nvim-mini/mini.pairs',
   event = "VeryLazy",
   version = "*",
   opts = {
@@ -13,5 +13,22 @@ return {
     skip_unbalanced = true,
     -- better deal with markdown code blocks
     markdown = true,
+
+    mappings = {
+      ['('] = { action = 'open', pair = '()', neigh_pattern = '[^\\].' },
+      ['['] = { action = 'open', pair = '[]', neigh_pattern = '[^\\].' },
+      ['{'] = { action = 'open', pair = '{}', neigh_pattern = '[^\\].' },
+
+      [')'] = { action = 'close', pair = '()', neigh_pattern = '[^\\].' },
+      [']'] = { action = 'close', pair = '[]', neigh_pattern = '[^\\].' },
+      ['}'] = { action = 'close', pair = '{}', neigh_pattern = '[^\\].' },
+
+      ['<'] = { action = 'open', pair = '<>', neigh_pattern = '[^\\].' },
+      ['>'] = { action = 'close', pair = '<>', neigh_pattern = '[^\\].' },
+
+      ['"'] = { action = 'closeopen', pair = '""', neigh_pattern = '[^\\].',   register = { cr = false } },
+      ["'"] = { action = 'closeopen', pair = "''", neigh_pattern = '[^%a\\].', register = { cr = false } },
+      ['`'] = { action = 'closeopen', pair = '``', neigh_pattern = '[^\\].',   register = { cr = false } },
+    },
   }
 }

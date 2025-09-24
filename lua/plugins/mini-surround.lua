@@ -1,1 +1,5 @@
-return { 'echasnovski/mini.surround', version = '*', opts = {} }
+return {
+  'nvim-mini/mini.surround',
+  version = '*',
+  opts = {}
+}

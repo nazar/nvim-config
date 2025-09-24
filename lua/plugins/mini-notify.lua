@@ -1,1 +1,5 @@
-return { 'echasnovski/mini.notify', version = '*', opts = {} }
+return {
+  'nvim-mini/mini.notify',
+  version = '*',
+  opts = {}
+}
