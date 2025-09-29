@@ -39,7 +39,15 @@ return {
         auto_show = true
       },
       -- Don't select by default, auto insert on selection
-      list = { selection = { preselect = false, auto_insert = true } },
+      list = {
+        selection = {
+          preselect = false,
+          auto_insert = false
+        }
+      },
+      menu = {
+        uto_show_delay_ms = 1000
+      },
     },
 
     -- signature = { enabled = true },
@@ -48,6 +56,17 @@ return {
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
       default = { 'snippets', 'buffer', 'lsp', 'path' },
+      -- providers = {
+      --   lsp = {
+      --     name = 'LSP',
+      --     module = 'blink.cmp.sources.lsp',
+      --     transform_items = function(_, items)
+      --       return vim.tbl_filter(function(item)
+      --         return item.kind ~= require('blink.cmp.types').CompletionItemKind.Keyword
+      --       end, items)
+      --     end,
+      --   },
+      -- },
     },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
