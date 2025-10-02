@@ -73,7 +73,7 @@ vim.cmd(
 
 -- own overrides
 -- find myself hitting cmd-w in insert mode to save - override to save - ctrl-o to enter single command mode
-vim.keymap.set("i", "<D-s>", "<C-o><cmd>w<cr><C-o>", { desc = "Quick save in Insert mode" })
+vim.keymap.set("i", "<D-s>", "<C-o><cmd>w<cr>", { desc = "Quick save in Insert mode" })
 -- duplicate line
 vim.keymap.set("i", "<D-d>", "<C-o>yy<C-o>p", { desc = "Quick duplicate in Insert mode" })
 vim.keymap.set("n", "<D-d>", "yyp", { desc = "Quick duplicate in Normal mode" })

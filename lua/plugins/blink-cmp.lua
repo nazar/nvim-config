@@ -42,11 +42,11 @@ return {
       list = {
         selection = {
           preselect = false,
-          auto_insert = false
-        }
+          auto_insert = false,
+        },
       },
       menu = {
-        uto_show_delay_ms = 1000
+        auto_show_delay_ms = 1000,
       },
     },
 
