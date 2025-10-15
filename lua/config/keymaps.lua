@@ -74,6 +74,7 @@ vim.cmd(
 -- own overrides
 -- find myself hitting cmd-w in insert mode to save - override to save - ctrl-o to enter single command mode
 vim.keymap.set("i", "<D-s>", "<C-o><cmd>w<cr>", { desc = "Quick save in Insert mode" })
+vim.keymap.set("n", "<D-s>", "<cmd>w<cr>", { desc = "Quick save in Normal mode" })
 -- duplicate line
 vim.keymap.set("i", "<D-d>", "<C-o>yy<C-o>p", { desc = "Quick duplicate in Insert mode" })
 vim.keymap.set("n", "<D-d>", "yyp", { desc = "Quick duplicate in Normal mode" })
@@ -81,3 +82,8 @@ vim.keymap.set("n", "<D-d>", "yyp", { desc = "Quick duplicate in Normal mode" })
 vim.api.nvim_set_keymap("n", "<D-S-2>", [[sr'"]], { desc = "Quick change single quotes to double quotes" })
 vim.api.nvim_set_keymap("i", "<D-S-2>", [[<esc>sr'"i]], { desc = "Quick change single quotes to double quotes" })
 
+-- indent without losing visual block mode
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
+vim.keymap.set('n', '<leader>u', require('undotree').toggle, { noremap = true, silent = true, desc = "Toggle UndoTree" })

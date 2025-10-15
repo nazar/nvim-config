@@ -9,6 +9,7 @@ return {
     },
     config = function()
       require('neo-tree').setup({
+        close_if_last_window = true,
         sort_case_insensitive = true,
         filesystem = {
           filtered_items = {
@@ -30,6 +31,10 @@ return {
             leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
           },
         },
+        source_selector = {
+          winbar = true,
+          statusline = false
+        }
       })
       vim.keymap.set("n", "<leader>ee", "<cmd>Neotree toggle<CR>", { desc = "File [E]xplorer Toggle" })
       vim.keymap.set("n", "<leader>ef", "<cmd>Neotree focus<CR>", { desc = "File Explorer Open and [F]ocus" })
