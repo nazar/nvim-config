@@ -9,7 +9,8 @@ return {
     },
     config = function()
       require('neo-tree').setup({
-        close_if_last_window = true,
+        close_if_last_window = false,
+        popup_border_style="",
         sort_case_insensitive = true,
         filesystem = {
           filtered_items = {
@@ -28,8 +29,11 @@ return {
           follow_current_file = {
             enabled = true, -- This will find and focus the file in the active buffer every time
             --               -- the current file is changed while the tree is open.
-            leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
+            leave_dirs_open = true, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
           },
+        },
+        buffers = {
+          show_unloaded = true
         },
         source_selector = {
           winbar = true,
