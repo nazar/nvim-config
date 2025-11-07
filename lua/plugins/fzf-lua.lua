@@ -5,6 +5,11 @@ return {
     files = {
       cwd_prompt_shorten_len = 16
     },
+    winopts = {
+      preview = {
+        wrap = true
+      }
+    },
     keymap = {
       -- adds finder window results to quicklist
       fzf = {
