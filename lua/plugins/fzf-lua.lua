@@ -6,6 +6,7 @@ return {
       cwd_prompt_shorten_len = 16
     },
     winopts = {
+      width=0.95,
       preview = {
         wrap = true
       }
@@ -35,6 +36,7 @@ return {
     { "<leader>ft", function() require('fzf-lua').command_history() end, desc="Command His[T]ory" },
     { "<leader>fp", function() require('neoclip.fzf')() end, desc="Cli[P]board History" },
     { "<leader><leader>", function() require('fzf-lua').buffers() end, desc="[ ] Find existing buffers" },
+    { "<c-tab>", function() require('fzf-lua').buffers() end, desc="[ ] Find existing buffers" },
     { "<leader>/", function() require('fzf-lua').lgrep_curbuf() end, desc="[/] Live grep the current buffer" },
   }
 }

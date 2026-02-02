@@ -165,19 +165,21 @@ return {
           [vim.diagnostic.severity.HINT] = '󰌶 ',
         },
       } or {},
-      virtual_text = {
-        source = 'if_many',
-        spacing = 2,
-        format = function(diagnostic)
-          local diagnostic_message = {
-            [vim.diagnostic.severity.ERROR] = diagnostic.message,
-            [vim.diagnostic.severity.WARN] = diagnostic.message,
-            [vim.diagnostic.severity.INFO] = diagnostic.message,
-            [vim.diagnostic.severity.HINT] = diagnostic.message,
-          }
-          return diagnostic_message[diagnostic.severity]
-        end,
-      },
+      -- Disable Neovim's default virtual text diagnostics and instead use tiny-inline-diagnostic
+      virtual_text = false,
+      -- virtual_text = {
+      --   source = 'if_many',
+      --   spacing = 2,
+      --   format = function(diagnostic)
+      --     local diagnostic_message = {
+      --       [vim.diagnostic.severity.ERROR] = diagnostic.message,
+      --       [vim.diagnostic.severity.WARN] = diagnostic.message,
+      --       [vim.diagnostic.severity.INFO] = diagnostic.message,
+      --       [vim.diagnostic.severity.HINT] = diagnostic.message,
+      --     }
+      --     return diagnostic_message[diagnostic.severity]
+      --   end,
+      -- },
     }
 
     -- LSP servers and clients are able to communicate to each other what features they support.
@@ -210,8 +212,13 @@ return {
       -- ts_ls = {},
       -- css/less/scss
       cssls={},
-      eslint={},
+      -- eslint={
+      --   flags = {
+      --     debounce_text_changes = 2000
+      --   }
+      -- },
       emmet_language_server={},
+      -- codebook={},
 
       lua_ls = {
         -- cmd = { ... },
@@ -247,6 +254,16 @@ return {
       'stylua', -- Used to format Lua code
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+
+    -- require('lspconfig')["mdx_analyzer"].setup({
+    --   filetypes = { "markdown.mdx", "mdx" },
+    --   init_options = {
+    --     typescript = {
+    --       enabled = true
+    --     }
+    --   },
+    --   capabilities = capabilities,
+    -- })
 
     require('mason-lspconfig').setup {
       ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
