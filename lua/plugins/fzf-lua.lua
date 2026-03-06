@@ -28,7 +28,7 @@ return {
     { "<leader>fw", function() require('fzf-lua').grep_cword() end, desc="Find current [w]ord" },
     { "<leader>fW", function() require('fzf-lua').grep_cWORD() end, desc="Find current [W]ORD" },
     { "<leader>fd", function() require('fzf-lua').diagnostics_document() end, desc="Find [D]iagnostics" },
-    { "<leader>fr", function() require('fzf-lua').resume() end, desc="Find [R]esume" },
+    { "<leader>fr", function() require('fzf-lua').search_history() end, desc="Sea[R]ch History" },
     { "<leader>fo", function() require('fzf-lua').oldfiles() end, desc="Find [O]ld files" },
     { "<leader>fs", function() require('fzf-lua').git_status() end, desc="Git [S]status" },
     { "<leader>fj", function() require('fzf-lua').jumps() end, desc="[J]umps list" },

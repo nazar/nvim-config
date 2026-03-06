@@ -33,17 +33,34 @@ return {
         else
           gs.nav_hunk("next")
         end
-      end, "Next Hunk")
+      end, "Next Hunk - Unstaged")
+
+      map("n", "]j", function()
+        if vim.wo.diff then
+          vim.cmd.normal({ "]c", bang = true })
+        else
+          gs.nav_hunk("next", { target="all" })
+        end
+      end, "Next Hunk - Staged/Unstaged")
+
       map("n", "[h", function()
         if vim.wo.diff then
           vim.cmd.normal({ "[c", bang = true })
         else
           gs.nav_hunk("prev")
         end
-      end, "Prev Hunk")
+      end, "Prev Hunk - Unstaged")
 
-      -- map("n", "]H", function() gs.nav_hunk("last") end, "Last Hunk")
-      -- map("n", "[H", function() gs.nav_hunk("first") end, "First Hunk")
+      map("n", "[j", function()
+        if vim.wo.diff then
+          vim.cmd.normal({ "[c", bang = true })
+        else
+          gs.nav_hunk("prev", { target="all" })
+        end
+      end, "Prev Hunk - Staged/Unstaged")
+
+      map("n", "]H", function() gs.nav_hunk("last") end, "Last Hunk")
+      map("n", "[H", function() gs.nav_hunk("first") end, "First Hunk")
       map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
       map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
       map("n", "<leader>ghu", gs.undo_stage_hunk, "Undo Stage Hunk")

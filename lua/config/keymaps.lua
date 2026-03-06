@@ -86,7 +86,5 @@ vim.api.nvim_set_keymap("i", "<D-S-2>", [[<esc>sr'"i]], { desc = "Quick change s
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
-vim.keymap.set('n', '<leader>u', require('undotree').toggle, { noremap = true, silent = true, desc = "Toggle UndoTree" })
-
 -- highlight without moving cursor
 vim.keymap.set("n", "<F8>", "*``", { desc = "Highlight word on cursor without moving" })

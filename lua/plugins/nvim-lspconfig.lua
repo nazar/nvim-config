@@ -212,11 +212,12 @@ return {
       -- ts_ls = {},
       -- css/less/scss
       cssls={},
-      -- eslint={
-      --   flags = {
-      --     debounce_text_changes = 2000
-      --   }
-      -- },
+      eslint={
+        flags = {
+          allow_incremental_sync = false,
+          debounce_text_changes = 1000,        
+        }
+      },
       emmet_language_server={},
       -- codebook={},
 
