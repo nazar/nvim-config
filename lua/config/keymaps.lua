@@ -22,6 +22,9 @@ vim.keymap.set({ 'n', 'v' }, 'c', '"_c')     -- same, don't copy c based deletes
 -- vim.keymap.set({ 'n', 'v' }, 'p', '"_p')     -- same, don't copy c based deletes to clipboard, only x gets copied to clipboard
 -- vim.keymap.set({ 'n', 'v' }, 'P', '"_p')     -- same, don't copy c based deletes to clipboard, only x gets copied to clipboard
 
+-- simple edits without leaving normal mode
+vim.keymap.set("n", ";;", "i<cr><esc>")
+
 -- LSP related
 vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, { desc="Open Diagnostics in Float" })
 -- vim way: ; goes to the direction you were moving.
