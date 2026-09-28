@@ -46,7 +46,7 @@ return {
         },
       },
       menu = {
-        auto_show_delay_ms = 1000,
+        auto_show_delay_ms = 100,
       },
     },
 

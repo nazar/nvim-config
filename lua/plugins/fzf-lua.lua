@@ -8,8 +8,8 @@ return {
     winopts = {
       width=0.95,
       preview = {
-        wrap = true
-      }
+        wrap = true,
+      },
     },
     keymap = {
       -- adds finder window results to quicklist
@@ -34,9 +34,10 @@ return {
     { "<leader>fj", function() require('fzf-lua').jumps() end, desc="[J]umps list" },
     { "<leader>fm", function() require('fzf-lua').marks() end, desc="[M]arks" },
     { "<leader>ft", function() require('fzf-lua').command_history() end, desc="Command His[T]ory" },
+    { "<leader>fu", function() require('fzf-lua').lgrep_curbuf() end, desc="Live Grep Current B[U]ffer" },
     { "<leader>fp", function() require('neoclip.fzf')() end, desc="Cli[P]board History" },
     { "<leader><leader>", function() require('fzf-lua').buffers() end, desc="[ ] Find existing buffers" },
     { "<c-tab>", function() require('fzf-lua').buffers() end, desc="[ ] Find existing buffers" },
     { "<leader>/", function() require('fzf-lua').lgrep_curbuf() end, desc="[/] Live grep the current buffer" },
-  }
+  },
 }
